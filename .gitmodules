@@ -1,0 +1,3 @@
+[submodule "dbtAstro"]
+	path = dbtAstro
+	url = https://github.com/subbota19/dbtAstro.git

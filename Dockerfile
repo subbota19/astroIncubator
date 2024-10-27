@@ -23,4 +23,3 @@ RUN git clone --no-checkout https://github.com/subbota19/dbtAstro.git $DBT_PATH 
     echo "profiles.yml" >> .git/info/sparse-checkout && \
     echo "packages.yml" >> .git/info/sparse-checkout && \
     git checkout main
-
