@@ -1,0 +1,1 @@
+psql -U airflow_user -d dbt -h localhost -p 5433 -W

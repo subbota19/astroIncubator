@@ -2,20 +2,24 @@ from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
 from os import environ, path
 from datetime import datetime
 
-AIRFLOW_HOME = environ['AIRFLOW_HOME']
+AIRFLOW_HOME = environ.get("AIRFLOW_HOME")
+DBT_PROFILE = environ.get("DBT_PROFILE")
+TARGET_NAME = environ.get("TARGET_NAME")
+DBT_PATH = environ.get("DBT_PATH")
+VENV_PATH = "dbt_venv/bin/dbt"
 
 profile_config = ProfileConfig(
-    profile_name="duckdb",
-    target_name="dev",
-    profiles_yml_filepath="/usr/local/airflow/dbt/duckdb/profiles.yml"
+    profile_name=DBT_PROFILE,
+    target_name=TARGET_NAME,
+    profiles_yml_filepath=f"{DBT_PATH}/profiles.yml"
 )
 
 project_config = ProjectConfig(
-    dbt_project_path="/usr/local/airflow/dbt/duckdb",
+    dbt_project_path=DBT_PATH,
 )
 
 execution_config = ExecutionConfig(
-    dbt_executable_path=f"{AIRFLOW_HOME}/dbt_venv/bin/dbt",
+    dbt_executable_path=f"{AIRFLOW_HOME}/{VENV_PATH}",
 )
 
 duckdb_dag = DbtDag(

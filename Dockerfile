@@ -1,6 +1,6 @@
 FROM quay.io/astronomer/astro-runtime:12.2.0
 
-ENV DBT_PATH=/usr/local/airflow/dbt/duckdb/
+ENV DBT_PATH=/usr/local/airflow/dbt
 
 RUN python -m venv dbt_venv && source dbt_venv/bin/activate && \
     pip install --no-cache-dir dbt-duckdb dbt-postgres && deactivate
@@ -29,3 +29,6 @@ COPY dbtAstro/packages.yml $DBT_PATH/
 #    echo "profiles.yml" >> .git/info/sparse-checkout && \
 #    echo "packages.yml" >> .git/info/sparse-checkout && \
 #    git checkout main
+
+ENV DBT_PROFILE postgres
+ENV TARGET_NAME dev

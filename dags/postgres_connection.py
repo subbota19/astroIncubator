@@ -11,13 +11,8 @@ from datetime import datetime
 def test_postgres_connection():
     hook = PostgresHook(postgres_conn_id="postgres_default")
     result = hook.get_first("SELECT 1;")
-    print("Connection Test Result:", result)
     return result
 
-
-# Run the test function
-if __name__ == "__main__":
-    test_postgres_connection()
 
 default_args = {
     "owner": "airflow",
