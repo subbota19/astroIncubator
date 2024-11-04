@@ -1,3 +1,6 @@
 [submodule "dbtAstro"]
 	path = dbtAstro
 	url = https://github.com/subbota19/dbtAstro.git
+[submodule "dbtHub"]
+	path = dbtHub
+	url = git@github.com:subbota19/dbtHub.git

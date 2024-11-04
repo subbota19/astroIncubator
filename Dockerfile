@@ -14,11 +14,11 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-COPY dbtAstro/models/ $DBT_PATH/models/
-COPY dbtAstro/tests/ $DBT_PATH/tests/
-COPY dbtAstro/dbt_project.yml $DBT_PATH/
-COPY dbtAstro/profiles.yml $DBT_PATH/
-COPY dbtAstro/packages.yml $DBT_PATH/
+COPY dbtHub/models/ $DBT_PATH/models/
+COPY dbtHub/tests/ $DBT_PATH/tests/
+COPY dbtHub/dbt_project.yml $DBT_PATH/
+COPY dbtHub/profiles.yml $DBT_PATH/
+COPY dbtHub/packages.yml $DBT_PATH/
 
 #RUN git clone --no-checkout https://github.com/subbota19/dbtAstro.git $DBT_PATH && \
 #    cd $DBT_PATH && \
