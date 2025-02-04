@@ -20,15 +20,5 @@ COPY dbtHub/dbt_project.yml $DBT_PATH/
 COPY dbtHub/profiles.yml $DBT_PATH/
 COPY dbtHub/packages.yml $DBT_PATH/
 
-#RUN git clone --no-checkout https://github.com/subbota19/dbtAstro.git $DBT_PATH && \
-#    cd $DBT_PATH && \
-#    git config core.sparseCheckout true && \
-#    echo "models/*" >> .git/info/sparse-checkout && \
-#    echo "tests/*" >> .git/info/sparse-checkout && \
-#    echo "dbt_project.yml" >> .git/info/sparse-checkout && \
-#    echo "profiles.yml" >> .git/info/sparse-checkout && \
-#    echo "packages.yml" >> .git/info/sparse-checkout && \
-#    git checkout main
-
 ENV DBT_PROFILE postgres
 ENV TARGET_NAME dev
